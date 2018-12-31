@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Restaurant Project </title>
+  <!--Bootstrap css-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!--main css-->
+  <link rel="stylesheet" href="css/main.css">
+  <!--magnific css-->
+  <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+  <!--fontawsome js-->
+  <script src="js/all.js"></script>
+  <!--Font-->
+  <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+  <script src="js/jquery.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/datePicker.js"></script>
+  <link rel="stylesheet" href="css/datePicker.css" type="text/css">
+
+  <title>Reservation</title>
+
+
+</head>
+
+<body>
+
+
+  <!--icons-->
+
+  <div class="container-fluid info p-3" id="top-icons">
+    <div class="row">
+      <div class="col d-flex justify-content-between align-items-baseline flex-wrap">
+        <div class="info-icons p-2">
+          <a href="#" class="mr-2 primary-color">
+            <i class="fab fa-facebook fa-2x"></i></a>
+          <a href="#" class="mr-2 primary-color">
+            <i class="fab fa-instagram fa-2x"></i></a>
+          <a href="#" class="mr-2 primary-color">
+            <i class="fab fa-twitter fa-2x"></i></a>
+        </div>
+        <h2 class="primary-color p-2 text-capitalize"> Marina , Monastir</h2>
+
+      </div>
+    </div>
+  </div>
+  <!--header-->
+
+  <header id="header">
+
+    <div class="container">
+      <div class="row height-90 align-items-center justify-content-center">
+        <div class="col">
+          <div>
+            <h1 id="info-reserv" class="my-3">Commandez votre table </h1>
+            <p id="reserv-p">Ce formulaire permet de commander une table dans notre restaurant, ensuite vous pouvez
+              commande vos plats.
+              Il faudra aussi indiquer vos coordonn&eacute;es et dans le cas de plusieurs personne, indiquer le nom de
+              chacun d'entre eux.</p>
+          </div>
+
+
+          <section id="Reservation">
+            <div class="container-fluid no-padding">
+              <div class="row">
+
+
+
+                <div class="col-md-6 my-3 align-self-center justify-content-center">
+                  <div class="card text-center">
+                    <div class="card-header ">
+                      <h1 class="text-uppercase primary-color">Reservation</h1>
+                    </div>
+                    <div class="card-body">
+
+                      <form id="form1" name="form1" method="post" action="">
+                        Table pour combien de personnes ?
+                        <select name="nbp" id="nbp">
+                          <option value="-1">--Veuillez choisir---</option>
+                          <option value="1">Une place</option>
+                          <option value="2">Deux places</option>
+                          <option value="4">4 places</option>
+                          <option value="6">6 places</option>
+                        </select>
+                        <br />
+                        <div id="chaises"></div><br />
+
+
+                        <h2 class="primary-color">Vos coordon&eacute;es</h2>
+                        Civilit&eacute; :
+                        <input name="civilite" type="radio" value="mme" />
+                        Madamme
+                        <input name="civilite" type="radio" value="mlle" />
+                        Mademoiselle
+                        <input name="civilite" type="radio" value="m" />
+                        Monsieur
+
+
+
+
+                        <!--input group-->
+                        <div class="input-group my-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="input-text">
+                              <i class="fas fa-user card-11"></i>
+                            </span>
+                          </div>
+                          <input name="nom" type="text" id="nom" size="60" class="form-control form-control-lg "
+                            placeholder="entrez votre nom et prenom">
+                        </div>
+
+
+
+
+
+
+                        <!--input group-->
+                        <div class="input-group my-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="input-phone">
+                              <i class="fas fa-phone card-11">
+
+                              </i>
+                            </span>
+                          </div>
+                          <input name="tel" type="phone" id="tel" class="form-control form-control-lg" placeholder="entrez votre numéro de téléphone">
+                        </div>
+
+
+                        <!--input group-->
+                        <div class="input-group my-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="input-email">
+                              <i class="fas fa-envelope card-11">
+
+                              </i>
+                            </span>
+                          </div>
+                          <input type="e.mail" id="email" class="form-control form-control-lg" placeholder="Entrez votre e-mail">
+                        </div>
+                        <!--input group-->
+
+                        A quelle date vous allez venir ?
+                        <input name="date" type="text" id="date" value="" />
+                        <br />
+
+                        <hr />
+
+
+
+
+
+                        <div id="div_accompagnateurs">Liste des accompagnateurs (une personne par ligne):
+                          <br />
+                          <textarea name="accompagnateurs" cols="60" rows="4" id="accompagnateurs"></textarea>
+                          <br />
+                        </div>
+
+
+                        <!--select menu-->
+                        <h2 class="primary-color">Que voulez-vous manger ? </h2>
+
+                        <div class="form-control">
+
+
+                          <div class="form-check">
+                            <input class="form-check-input" name="cmd" type="checkbox" value="Salade" data-prix="5">
+                            <label class="form-check-label">Salade</label>
+                          </div>
+
+                          <div class="form-check">
+                            <input class="form-check-input" name="cmd" type="checkbox" value="Soupe" data-prix="2.5">
+                            <label class="form-check-label">Soupe</label>
+                          </div>
+
+                          <div class="form-check">
+                            <input class="form-check-input" name="cmd" type="checkbox" value="Couscous" data-prix="15.5">
+                            <label class="form-check-label">Couscous</label>
+                          </div>
+
+                          <div class="form-check">
+                            <input class="form-check-input" name="cmd" type="checkbox" value="Riz" data-prix="12">
+                            <label class="form-check-label">Riz</label>
+                          </div>
+
+                          <div class="form-check">
+                            <input class="form-check-input" name="cmd" type="checkbox" value="Fruits" data-prix="7">
+                            <label class="form-check-label">Fruits</label>
+                          </div>
+
+                          <div class="form-check">
+                            <input class="form-check-input" name="cmd" type="checkbox" value="Gateaux" data-prix="6.4">
+                            <label class="form-check-label">Gateaux</label>
+                          </div>
+                        </div>
+                        <hr />
+
+                        <!--end select menu-->
+
+                        <input class="btn btn-block btn-lg text-uppercase contact-btn" name="b1" type="button" id="b1"
+                          value="Valider ma commande" />
+
+                        <div id="div_resume">
+                          Afficher le r&eacute;sum&eacute; ici ...
+                        </div>
+                        <p>&nbsp;</p>
+
+
+
+
+
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+  </header>
+
+  <div>
+
+    <div class="col">
+      <a href="index.html" class="btn header-link primary-color "><i class="fas fa-home"></i></a>
+    </div>
+  </div>
+
+
+  <!--footer-->
+  <div class="container-fluid info p-3">
+    <div class="row">
+      <div class="col d-flex justify-content-between align-items-baseline flex-wrap">
+        <div class="info-icons p-2">
+          <a href="#" class="mr-2 primary-color">
+            <i class="fab fa-facebook fa-2x"></i></a>
+          <a href="#" class="mr-2 primary-color">
+            <i class="fab fa-instagram fa-2x"></i></a>
+          <a href="#" class="mr-2 primary-color">
+            <i class="fab fa-twitter fa-2x"></i></a>
+        </div>
+        <h2 class="primary-color p-2 text-uppercase">&copy;CopyRight Are reserved 2018</h2>
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
